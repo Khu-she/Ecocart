@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoCraft | Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">EcoCart</div>
+   <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="cart.html" class="active">Cart</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+  </header>
+
+  <!-- CART SECTION -->
+  <section class="cart-page">
+    <h2>Your Cart</h2>
+    <p class="subtext">Review your selected items before checkout</p>
+
+    <div class="cart-container">
+      <!-- Cart Item 1 -->
+      <div class="cart-item">
+        <img src="basket.jpg" alt="Handwoven Basket">
+        <div class="cart-details">
+          <h3>Handwoven Basket</h3>
+          <p>₹499</p>
+          <input type="number" value="1" min="1">
+          <button class="btn-outline">Remove</button>
+        </div>
+      </div>
+
+      <!-- Cart Item 2 -->
+      <div class="cart-item">
+        <img src="lamp.jpg" alt="Eco Lamp">
+        <div class="cart-details">
+          <h3>Eco Lamp</h3>
+          <p>₹799</p>
+          <input type="number" value="1" min="1">
+          <button class="btn-outline">Remove</button>
+        </div>
+      </div>
+
+      <!-- Cart Item 3 -->
+      <div class="cart-item">
+        <img src="bottle.jpg" alt="Reusable Bottle">
+        <div class="cart-details">
+          <h3>Reusable Bottle</h3>
+          <p>₹349</p>
+          <input type="number" value="2" min="1">
+          <button class="btn-outline">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CART SUMMARY -->
+    
+    <div class="cart-summary">
+    <h3>Cart Summary</h3>
+    <p>Total: ₹1647</p>
+    <button class="proceed-btn">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 EcoCraft. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
