@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Cart - EcoCart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body text-center p-5">
+                        <i class="bi bi-cart-x display-1 text-danger mb-3"></i>
+                        <h2 class="mb-4">Clear Cart Data</h2>
+                        <p class="text-muted mb-4">Click the button below to clear all cart data from localStorage.</p>
+                        <button id="clearBtn" class="btn btn-danger btn-lg">
+                            <i class="bi bi-trash me-2"></i>Clear Cart Data
+                        </button>
+                        <div id="message" class="mt-4"></div>
+                        <div class="mt-4">
+                            <a href="cart.html" class="btn btn-primary">Go to Cart</a>
+                            <a href="index.html" class="btn btn-outline-secondary">Go to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <script>
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            // Clear cart data
+            localStorage.removeItem('ecocart');
+            localStorage.removeItem('promoCode');
+            
+            // Show success message
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = `
+                <div class="alert alert-success" role="alert">
+                    <i class="bi bi-check-circle me-2"></i>
+                    <strong>Success!</strong> All cart data has been cleared.
+                </div>
+            `;
+            
+            // Disable button
+            this.disabled = true;
+            this.innerHTML = '<i class="bi bi-check me-2"></i>Cleared';
+        });
+
+        // Show current cart status on load
+        window.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('ecocart')) || [];
+            const messageDiv = document.getElementById('message');
+            
+            if (cart.length === 0) {
+                messageDiv.innerHTML = `
+                    <div class="alert alert-info" role="alert">
+                        <i class="bi bi-info-circle me-2"></i>
+                        Your cart is currently empty.
+                    </div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="alert alert-warning" role="alert">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        You have ${cart.length} item(s) in your cart.
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

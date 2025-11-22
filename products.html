@@ -4,118 +4,559 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoCart | Products</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">EcoCart</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html" class="active">Products</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Product Section -->
-  <section class="products-page">
-    <h2>Our Eco-Friendly Collection</h2>
-    <p class="subtext">Sustainable, handcrafted, and made with care for our planet.</p>
-
-    <div class="product-grid">
-      <!-- Product 1 -->
-      <div class="product-card">
-        <img src="basket.jpg" alt="Handwoven Basket">
-        <h3>Handwoven Basket</h3>
-        <p class="price">₹499</p>
-        <button class="btn-outline">Add to Cart</button>
+  <!-- Navbar Placeholder - Loaded from navbar.js -->
+  <div id="navbar-placeholder"></div><!-- Enhanced Products Hero Banner -->
+  <div class="products-hero-banner mt-5 pt-5">
+    <div class="container text-center py-5">
+      <div class="products-hero-content animate-fade-in">
+        <i class="bi bi-shop display-1 text-white mb-3 pulse-icon"></i>
+        <h1 class="display-3 fw-bold text-white mb-3">Our Eco-Friendly Collection</h1>
+        <p class="lead text-white mb-4">Sustainable, handcrafted, and made with care for our planet.</p>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Products</li>
+          </ol>
+        </nav>
       </div>
+    </div>
+  </div>
 
-      <!-- Product 2 -->
-      <div class="product-card">
-        <img src="pot2.jpg" alt="Clay Pot">
-        <h3>Clay Pot</h3>
-        <p class="price">₹699</p>
-        <button class="btn-outline">Add to Cart</button>
+  <!-- Product Stats Banner -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="stat-card text-center p-4">
+          <i class="bi bi-box-seam display-4 text-primary mb-3"></i>
+          <h3 class="fw-bold mb-2">50+</h3>
+          <p class="text-muted mb-0">Eco-Friendly Products</p>
+        </div>
       </div>
+      <div class="col-md-4">
+        <div class="stat-card text-center p-4">
+          <i class="bi bi-people display-4 text-success mb-3"></i>
+          <h3 class="fw-bold mb-2">1000+</h3>
+          <p class="text-muted mb-0">Happy Customers</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat-card text-center p-4">
+          <i class="bi bi-star-fill display-4 text-warning mb-3"></i>
+          <h3 class="fw-bold mb-2">4.8/5</h3>
+          <p class="text-muted mb-0">Average Rating</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Enhanced Bootstrap Filter Section -->
+  <div class="container my-5">
+    <div class="card border-0 shadow-hover p-4 filter-card">
+      <div class="row align-items-center g-4">
+        <!-- Search Bar -->
+        <div class="col-lg-4 col-md-6">
+          <div class="search-wrapper">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" class="form-control search-input-modern" placeholder="Search products..." id="product-search">
+          </div>
+        </div>
+          <!-- Category Filter -->
+        <div class="col-lg-5 col-md-6">
+          <div class="d-flex flex-wrap gap-2">
+            <input type="radio" class="btn-check" name="category" id="all" value="all" checked>
+            <label class="btn btn-outline-primary btn-filter" for="all">
+              <i class="bi bi-grid me-1"></i>All
+            </label>
+            
+            <input type="radio" class="btn-check" name="category" id="decor" value="decor">
+            <label class="btn btn-outline-primary btn-filter" for="decor">
+              <i class="bi bi-house-door me-1"></i>Decor
+            </label>
+            
+            <input type="radio" class="btn-check" name="category" id="accessories" value="accessories">
+            <label class="btn btn-outline-primary btn-filter" for="accessories">
+              <i class="bi bi-bag me-1"></i>Accessories
+            </label>
+            
+            <input type="radio" class="btn-check" name="category" id="gifts" value="gifts">
+            <label class="btn btn-outline-primary btn-filter" for="gifts">
+              <i class="bi bi-gift me-1"></i>Gifts
+            </label>
+          </div>
+        </div>
+        
+        <!-- Sort Dropdown -->
+        <div class="col-lg-3 col-md-12">
+          <div class="dropdown w-100">
+            <button class="btn btn-outline-secondary dropdown-toggle w-100 btn-sort" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-sort-down me-2"></i>Sort By
+            </button>
+            <ul class="dropdown-menu w-100 dropdown-menu-modern" aria-labelledby="sortDropdown">
+              <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-up me-2"></i>Price: Low to High</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-down me-2"></i>Price: High to Low</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-star me-2"></i>Most Popular</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-clock me-2"></i>Newest First</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Active Filters Display -->
+      <div class="active-filters mt-3" id="active-filters" style="display: none;"> 
+        <div class="d-flex align-items-center flex-wrap gap-2">
+          <small class="text-muted">Active Filters:</small>
+          <span class="badge bg-primary filter-badge">
+            Category <i class="bi bi-x ms-1"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Enhanced Products Grid Section -->
+  <section class="py-4 products-grid-section">
+    <div class="container">
+      <!-- Results Count -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5 class="mb-0 text-muted">
+          <i class="bi bi-filter-circle me-2"></i>
+          Showing <span class="text-primary fw-bold" id="product-count">12</span> products
+        </h5>
+        <div class="view-toggle">
+          <button class="btn btn-sm btn-outline-secondary active" id="grid-view">
+            <i class="bi bi-grid-3x3-gap"></i>
+          </button>
+          <button class="btn btn-sm btn-outline-secondary" id="list-view">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="row g-4" id="products-grid">        <!-- Product 1 - Enhanced -->
+        <div class="col-xl-3 col-lg-4 col-md-6" data-category="decor">
+          <div class="card border-0 shadow-hover h-100 product-card-enhanced">
+            <div class="position-relative overflow-hidden product-image-wrapper">
+              <img src="basket.jpg" class="card-img-top product-image" alt="Handwoven Basket" style="height: 280px; object-fit: cover;">
+              <span class="badge bg-success position-absolute top-0 start-0 m-3 badge-modern">
+                <i class="bi bi-leaf me-1"></i>Eco-Friendly
+              </span>
+              <div class="product-overlay">
+                <button class="btn btn-light rounded-circle quick-view-btn" data-bs-toggle="tooltip" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div class="position-absolute top-0 end-0 m-3">
+                <button class="btn btn-light btn-sm rounded-circle wishlist-btn" data-bs-toggle="tooltip" title="Add to Wishlist">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h5 class="card-title fw-bold mb-2">Handwoven Basket</h5>
+              <div class="product-rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star text-warning"></i>
+                <small class="text-muted ms-2">(24)</small>
+              </div>
+              <p class="card-text text-muted small mb-3 flex-grow-1">Beautiful handwoven basket made from natural materials</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div>
+                  <span class="fs-4 fw-bold text-primary">₹499</span>
+                </div>
+                <button class="btn btn-primary btn-cart add-to-cart-btn" 
+                        data-product-id="basket-001"
+                        data-product-name="Handwoven Basket"
+                        data-product-price="499"
+                        data-product-image="basket.jpg">
+                  <i class="bi bi-cart-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>        <!-- Product 2 - Enhanced -->
+        <div class="col-xl-3 col-lg-4 col-md-6" data-category="decor">
+          <div class="card border-0 shadow-hover h-100 product-card-enhanced">
+            <div class="position-relative overflow-hidden product-image-wrapper">
+              <img src="pot2.jpg" class="card-img-top product-image" alt="Clay Pot" style="height: 280px; object-fit: cover;">
+              <span class="badge bg-warning position-absolute top-0 start-0 m-3 badge-modern">
+                <i class="bi bi-fire me-1"></i>Popular
+              </span>
+              <div class="product-overlay">
+                <button class="btn btn-light rounded-circle quick-view-btn" data-bs-toggle="tooltip" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div class="position-absolute top-0 end-0 m-3">
+                <button class="btn btn-light btn-sm rounded-circle wishlist-btn" data-bs-toggle="tooltip" title="Add to Wishlist">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h5 class="card-title fw-bold mb-2">Clay Pot</h5>
+              <div class="product-rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-half text-warning"></i>
+                <small class="text-muted ms-2">(18)</small>
+              </div>
+              <p class="card-text text-muted small mb-3 flex-grow-1">Traditional clay pot perfect for cooking and storage</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div>
+                  <span class="fs-4 fw-bold text-primary">₹699</span>
+                </div>
+                <button class="btn btn-primary btn-cart add-to-cart-btn" 
+                        data-product-id="pot-002"
+                        data-product-name="Clay Pot"
+                        data-product-price="699"
+                        data-product-image="pot2.jpg">
+                  <i class="bi bi-cart-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>        <!-- Product 3 - Enhanced -->
+        <div class="col-xl-3 col-lg-4 col-md-6" data-category="decor">
+          <div class="card border-0 shadow-hover h-100 product-card-enhanced">
+            <div class="position-relative overflow-hidden product-image-wrapper">
+              <img src="lamp.jpg" class="card-img-top product-image" alt="Bamboo Lamp" style="height: 280px; object-fit: cover;">
+              <span class="badge bg-danger position-absolute top-0 start-0 m-3 badge-modern">
+                <i class="bi bi-lightning me-1"></i>Limited
+              </span>
+              <div class="product-overlay">
+                <button class="btn btn-light rounded-circle quick-view-btn" data-bs-toggle="tooltip" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div class="position-absolute top-0 end-0 m-3">
+                <button class="btn btn-light btn-sm rounded-circle wishlist-btn" data-bs-toggle="tooltip" title="Add to Wishlist">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h5 class="card-title fw-bold mb-2">Bamboo Lamp</h5>
+              <div class="product-rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <small class="text-muted ms-2">(32)</small>
+              </div>
+              <p class="card-text text-muted small mb-3 flex-grow-1">Elegant bamboo lamp with soft ambient lighting</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div>
+                  <span class="fs-4 fw-bold text-primary">₹899</span>
+                </div>
+                <button class="btn btn-primary btn-cart add-to-cart-btn" 
+                        data-product-id="lamp-003"
+                        data-product-name="Bamboo Lamp"
+                        data-product-price="899"
+                        data-product-image="lamp.jpg">
+                  <i class="bi bi-cart-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <!-- Product 3 -->
-      <div class="product-card">
-        <img src="lamp.jpg" alt="Bamboo Lamp">
-        <h3>Bamboo Lamp</h3>
-        <p class="price">₹899</p>
-        <button class="btn-outline">Add to Cart</button>
-      </div>
+        <!-- Product 4 - Enhanced -->
+        <div class="col-xl-3 col-lg-4 col-md-6" data-category="accessories">
+          <div class="card border-0 shadow-hover h-100 product-card-enhanced">
+            <div class="position-relative overflow-hidden product-image-wrapper">
+              <img src="bag.jpg" class="card-img-top product-image" alt="Jute Bag" style="height: 280px; object-fit: cover;">
+              <span class="badge bg-info position-absolute top-0 start-0 m-3 badge-modern">
+                <i class="bi bi-stars me-1"></i>New
+              </span>
+              <div class="product-overlay">
+                <button class="btn btn-light rounded-circle quick-view-btn" data-bs-toggle="tooltip" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div class="position-absolute top-0 end-0 m-3">
+                <button class="btn btn-light btn-sm rounded-circle wishlist-btn" data-bs-toggle="tooltip" title="Add to Wishlist">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h5 class="card-title fw-bold mb-2">Jute Bag</h5>
+              <div class="product-rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star text-warning"></i>
+                <small class="text-muted ms-2">(15)</small>
+              </div>
+              <p class="card-text text-muted small mb-3 flex-grow-1">Durable and eco-friendly jute shopping bag</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div>
+                  <span class="fs-4 fw-bold text-primary">₹549</span>
+                </div>
+                <button class="btn btn-primary btn-cart add-to-cart-btn" 
+                        data-product-id="bag-004"
+                        data-product-name="Jute Bag"
+                        data-product-price="549"
+                        data-product-image="bag.jpg">
+                  <i class="bi bi-cart-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>        <!-- Product 5 - Enhanced -->
+        <div class="col-xl-3 col-lg-4 col-md-6" data-category="gifts">
+          <div class="card border-0 shadow-hover h-100 product-card-enhanced">
+            <div class="position-relative overflow-hidden product-image-wrapper">
+              <img src="cup.jpg" class="card-img-top product-image" alt="Recycled Cup Set" style="height: 280px; object-fit: cover;">
+              <div class="product-overlay">
+                <button class="btn btn-light rounded-circle quick-view-btn" data-bs-toggle="tooltip" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div class="position-absolute top-0 end-0 m-3">
+                <button class="btn btn-light btn-sm rounded-circle wishlist-btn" data-bs-toggle="tooltip" title="Add to Wishlist">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h5 class="card-title fw-bold mb-2">Recycled Cup Set</h5>
+              <div class="product-rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star text-warning"></i>
+                <small class="text-muted ms-2">(21)</small>
+              </div>
+              <p class="card-text text-muted small mb-3 flex-grow-1">Set of 4 cups made from recycled materials</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div>
+                  <span class="fs-4 fw-bold text-primary">₹749</span>
+                </div>
+                <button class="btn btn-primary btn-cart add-to-cart-btn" 
+                        data-product-id="cup-005"
+                        data-product-name="Recycled Cup Set"
+                        data-product-price="749"
+                        data-product-image="cup.jpg">
+                  <i class="bi bi-cart-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <!-- Product 4 -->
-      <div class="product-card">
-        <img src="bag.jpg" alt="Jute Bag">
-        <h3>Jute Bag</h3>
-        <p class="price">₹549</p>
-        <button class="btn-outline">Add to Cart</button>
-      </div>
+        <!-- Product 6 - Enhanced -->
+        <div class="col-xl-3 col-lg-4 col-md-6" data-category="decor">
+          <div class="card border-0 shadow-hover h-100 product-card-enhanced">
+            <div class="position-relative overflow-hidden product-image-wrapper">
+              <img src="bamboo.jpg" class="card-img-top product-image" alt="Bamboo Furniture" style="height: 280px; object-fit: cover;">
+              <div class="product-overlay">
+                <button class="btn btn-light rounded-circle quick-view-btn" data-bs-toggle="tooltip" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div class="position-absolute top-0 end-0 m-3">
+                <button class="btn btn-light btn-sm rounded-circle wishlist-btn" data-bs-toggle="tooltip" title="Add to Wishlist">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h5 class="card-title fw-bold mb-2">Bamboo Furniture</h5>
+              <div class="product-rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-half text-warning"></i>
+                <small class="text-muted ms-2">(28)</small>
+              </div>
+              <p class="card-text text-muted small mb-3 flex-grow-1">Sustainable bamboo furniture for modern homes</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div>
+                  <span class="fs-4 fw-bold text-primary">₹899</span>
+                </div>
+                <button class="btn btn-primary btn-cart add-to-cart-btn" 
+                        data-product-id="furniture-006"
+                        data-product-name="Bamboo Furniture"
+                        data-product-price="899"
+                        data-product-image="bamboo.jpg">
+                  <i class="bi bi-cart-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <!-- Product 5 -->
-      <div class="product-card">
-        <img src="cup.jpg" alt="Recycled Cup Set">
-        <h3>Recycled Cup Set</h3>
-        <p class="price">₹749</p>
-        <button class="btn-outline">Add to Cart</button>
-      </div>
+        <!-- Product 7 - Enhanced -->
+        <div class="col-xl-3 col-lg-4 col-md-6" data-category="gifts">
+          <div class="card border-0 shadow-hover h-100 product-card-enhanced">
+            <div class="position-relative overflow-hidden product-image-wrapper">
+              <img src="soap.jpg" class="card-img-top product-image" alt="Organic Soap Set" style="height: 280px; object-fit: cover;">
+              <span class="badge bg-success position-absolute top-0 start-0 m-3 badge-modern">
+                <i class="bi bi-flower1 me-1"></i>Organic
+              </span>
+              <div class="product-overlay">
+                <button class="btn btn-light rounded-circle quick-view-btn" data-bs-toggle="tooltip" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div class="position-absolute top-0 end-0 m-3">
+                <button class="btn btn-light btn-sm rounded-circle wishlist-btn" data-bs-toggle="tooltip" title="Add to Wishlist">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h5 class="card-title fw-bold mb-2">Organic Soap Set</h5>
+              <div class="product-rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <small class="text-muted ms-2">(45)</small>
+              </div>
+              <p class="card-text text-muted small mb-3 flex-grow-1">Natural organic soap set with essential oils</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div>
+                  <span class="fs-4 fw-bold text-primary">₹399</span>
+                </div>
+                <button class="btn btn-primary btn-cart add-to-cart-btn" 
+                        data-product-id="soap-007"
+                        data-product-name="Organic Soap Set"
+                        data-product-price="399"
+                        data-product-image="soap.jpg">
+                  <i class="bi bi-cart-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <!-- Product 6 -->
-      <div class="product-card">
-        <img src="bamboo.jpg" alt="Bamboo Furniture">
-        <h3>Bamboo Furniture</h3>
-        <p class="price">₹899</p>
-        <button class="btn-outline">Add to Cart</button>
-      </div>
-
-      <!-- Product 7 -->
-      <div class="product-card">
-        <img src="soap.jpg" alt="Organic Soap Set">
-        <h3>Organic Soap Set</h3>
-        <p class="price">₹399</p>
-        <button class="btn-outline">Add to Cart</button>
-      </div>
-
-      <!-- Product 8 -->
-      <div class="product-card">
-        <img src="bottle.jpg" alt="Glass Water Bottle">
-        <h3>Glass Water Bottle</h3>
-        <p class="price">₹599</p>
-        <button class="btn-outline">Add to Cart</button>
-      </div>
-
-      <!-- Product 9 -->
-      <div class="product-card">
-        <img src="coco.jpg" alt="Coconut Coasters">
-        <h3>Coconut Coasters</h3>
-        <p class="price">₹349</p>
-        <button class="btn-outline">Add to Cart</button>
-      </div>
-
-      <!-- Product 10 -->
-      <div class="product-card">
-        <img src="brush.jpg" alt="Bamboo Toothbrush">
-        <h3>Bamboo Toothbrush</h3>
-        <p class="price">₹249</p>
-        <button class="btn-outline">Add to Cart</button>
-      </div>
+        <!-- Product 8 - Enhanced -->
+        <div class="col-xl-3 col-lg-4 col-md-6" data-category="accessories">
+          <div class="card border-0 shadow-hover h-100 product-card-enhanced">
+            <div class="position-relative overflow-hidden product-image-wrapper">
+              <img src="bottle.jpg" class="card-img-top product-image" alt="Glass Water Bottle" style="height: 280px; object-fit: cover;">
+              <div class="product-overlay">
+                <button class="btn btn-light rounded-circle quick-view-btn" data-bs-toggle="tooltip" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div class="position-absolute top-0 end-0 m-3">
+                <button class="btn btn-light btn-sm rounded-circle wishlist-btn" data-bs-toggle="tooltip" title="Add to Wishlist">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h5 class="card-title fw-bold mb-2">Glass Water Bottle</h5>
+              <div class="product-rating mb-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star text-warning"></i>
+                <small class="text-muted ms-2">(33)</small>
+              </div>
+              <p class="card-text text-muted small mb-3 flex-grow-1">Reusable glass water bottle with bamboo cap</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div>
+                  <span class="fs-4 fw-bold text-primary">₹599</span>
+                </div>
+                <button class="btn btn-primary btn-cart add-to-cart-btn" 
+                        data-product-id="bottle-008"
+                        data-product-name="Glass Water Bottle"
+                        data-product-price="599"
+                        data-product-image="bottle.jpg">
+                  <i class="bi bi-cart-plus me-1"></i>Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      <!-- Enhanced Pagination -->
+      <nav aria-label="Product pagination" class="mt-5">
+        <ul class="pagination justify-content-center pagination-modern">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+              <i class="bi bi-chevron-left"></i>
+            </a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              <i class="bi bi-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-links">
-      <a href="contact.html">Contact Us</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms & Conditions</a>
-    </div>
-    <p>© 2025 EcoCart. All rights reserved.</p>
-  </footer>
+  <!-- Newsletter Section -->
+  <section class="py-5 bg-light newsletter-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <i class="bi bi-envelope-heart display-3 text-primary mb-4"></i>
+          <h2 class="fw-bold mb-3">Stay Updated</h2>
+          <p class="lead text-muted mb-4">Subscribe to our newsletter for exclusive deals and eco-friendly tips!</p>
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="input-group input-group-lg shadow-sm">
+                <input type="email" class="form-control" placeholder="Enter your email address">
+                <button class="btn btn-primary px-4" type="button">
+                  <i class="bi bi-send me-2"></i>Subscribe
+                </button>
+              </div>
+              <small class="text-muted d-block mt-2">
+                <i class="bi bi-shield-check me-1"></i>We respect your privacy
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>    </div>
+  </section>
+
+  <!-- Footer Placeholder - Loaded from footer.js -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <!-- Reusable Components -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js" type="module"></script>
+  <script src="js/products.js"></script>
+  
+  <!-- Initialize Bootstrap Tooltips -->
+  <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  </script>
 </body>
 </html>

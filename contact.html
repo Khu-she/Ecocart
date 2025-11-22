@@ -4,59 +4,316 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoCart | Contact Us</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">EcoCart</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Navbar Placeholder - Auto-loaded by navbar.js -->
+  <div id="navbar-placeholder"></div>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact-page">
-    <h2>Contact Us</h2>
-    <p class="subtext">We’d love to hear from you! Fill out the form below and we’ll get back to you soon.</p>
-
-    <div class="contact-container">
-      <form class="contact-form" action="#" method="post">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
-
-      <div class="contact-info">
-        <h3>Reach Us At</h3>
-        <p><strong>Email:</strong> support@ecocart.com</p>
-        <p><strong>Phone:</strong> +91 98765 43210</p>
-        <p><strong>Address:</strong> 123 Green Street, Eco City, India</p>
+  <!-- Enhanced Contact Hero Banner -->
+  <div class="contact-hero-banner mt-5 pt-5">
+    <div class="container text-center py-5">
+      <div class="contact-hero-content animate-fade-in">
+        <i class="bi bi-chat-heart display-1 text-white mb-3 pulse-icon"></i>
+        <h1 class="display-3 fw-bold text-white mb-3">Get In Touch</h1>
+        <p class="lead text-white mb-4">We'd love to hear from you! Our team is here to help with any questions.</p>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Contact Us</li>
+          </ol>
+        </nav>
       </div>
     </div>
+  </div>
+
+  <!-- Contact Stats Banner -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="stat-card text-center p-4">
+          <i class="bi bi-clock-history display-4 text-primary mb-3"></i>
+          <h5 class="fw-bold mb-2">24/7</h5>
+          <p class="text-muted mb-0 small">Customer Support</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card text-center p-4">
+          <i class="bi bi-reply-fill display-4 text-success mb-3"></i>
+          <h5 class="fw-bold mb-2">&lt; 2 Hours</h5>
+          <p class="text-muted mb-0 small">Response Time</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card text-center p-4">
+          <i class="bi bi-star-fill display-4 text-warning mb-3"></i>
+          <h5 class="fw-bold mb-2">4.9/5</h5>
+          <p class="text-muted mb-0 small">Satisfaction Rate</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card text-center p-4">
+          <i class="bi bi-people-fill display-4 text-info mb-3"></i>
+          <h5 class="fw-bold mb-2">5000+</h5>
+          <p class="text-muted mb-0 small">Happy Customers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap Contact Section -->
+  <section class="py-5 contact-section">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Contact Form -->
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-hover contact-form-card">
+            <div class="card-header bg-gradient-primary text-white border-0">
+              <h4 class="card-title mb-0 d-flex align-items-center">
+                <i class="bi bi-chat-dots me-2"></i>Send us a Message
+              </h4>
+            </div>
+            <div class="card-body p-4">
+              <form action="#" method="post" id="contactForm">
+                <div class="row g-4">                  <!-- Name Fields -->
+                  <div class="col-md-6">
+                    <label for="firstName" class="form-label fw-semibold">
+                      <i class="bi bi-person me-1 text-primary"></i>First Name <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control form-control-modern" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="lastName" class="form-label fw-semibold">
+                      <i class="bi bi-person-fill me-1 text-primary"></i>Last Name <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control form-control-modern" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                  </div>
+
+                  <!-- Email and Phone -->
+                  <div class="col-md-6">
+                    <label for="email" class="form-label fw-semibold">
+                      <i class="bi bi-envelope me-1 text-primary"></i>Email Address <span class="text-danger">*</span>
+                    </label>
+                    <input type="email" class="form-control form-control-modern" id="email" name="email" placeholder="your.email@example.com" required>
+                    <div class="form-text">
+                      <i class="bi bi-shield-check me-1"></i>We'll never share your email with anyone else.
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label fw-semibold">
+                      <i class="bi bi-telephone me-1 text-primary"></i>Phone Number
+                    </label>
+                    <input type="tel" class="form-control form-control-modern" id="phone" name="phone" placeholder="+91 98765 43210">
+                  </div>
+
+                  <!-- Subject -->
+                  <div class="col-12">
+                    <label for="subject" class="form-label fw-semibold">
+                      <i class="bi bi-tag me-1 text-primary"></i>Subject <span class="text-danger">*</span>
+                    </label>
+                    <select class="form-select form-control-modern" id="subject" name="subject" required>
+                      <option selected disabled>Choose a subject</option>
+                      <option value="general">💬 General Inquiry</option>
+                      <option value="product">🛍️ Product Support</option>
+                      <option value="order">📦 Order Related</option>
+                      <option value="partnership">🤝 Business Partnership</option>
+                      <option value="feedback">⭐ Feedback & Suggestions</option>
+                    </select>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="col-12">
+                    <label for="message" class="form-label fw-semibold">
+                      <i class="bi bi-chat-text me-1 text-primary"></i>Message <span class="text-danger">*</span>
+                    </label>
+                    <textarea class="form-control form-control-modern" id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                    <div class="form-text">
+                      <i class="bi bi-info-circle me-1"></i>Minimum 10 characters required.
+                    </div>
+                  </div>
+
+
+                  <!-- Submit Button -->
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-lg px-5 py-3 btn-modern-pulse">
+                      <i class="bi bi-send-fill me-2"></i>Send Message
+                    </button>
+                    <button type="reset" class="btn btn-outline-secondary btn-lg px-4 py-3 ms-2">
+                      <i class="bi bi-arrow-clockwise me-2"></i>Reset
+                    </button>
+                  </div>
+
+                  <!-- Success Message -->
+                  <div class="col-12">
+                    <div class="alert alert-success alert-dismissible fade" role="alert" id="successMessage" style="display: none;">
+                      <i class="bi bi-check-circle-fill me-2"></i>
+                      <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon!
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>        <!-- Contact Information Sidebar -->
+        <div class="col-lg-4">
+          <!-- Contact Details Card -->
+          <div class="card border-0 shadow-hover mb-4 contact-info-card">
+            <div class="card-header bg-gradient-success text-white border-0">
+              <h5 class="card-title mb-0">
+                <i class="bi bi-geo-alt-fill me-2"></i>Contact Information
+              </h5>
+            </div>
+            <div class="card-body p-4">
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-start">
+                  <div class="contact-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold">Email</h6>
+                    <p class="text-muted mb-0">support@ecocart.com</p>
+                    <p class="text-muted small">info@ecocart.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-start">
+                  <div class="contact-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold">Phone</h6>
+                    <p class="text-muted mb-0">+91 98765 43210</p>
+                    <p class="text-muted small">Mon-Fri 9AM-6PM IST</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-start">
+                  <div class="contact-icon bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold">Address</h6>
+                    <p class="text-muted mb-0">123 Green Street<br>Eco City, Maharashtra<br>India - 400001</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="d-flex align-items-start">
+                  <div class="contact-icon bg-info text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold">Business Hours</h6>
+                    <p class="text-muted small mb-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p class="text-muted small mb-1">Saturday: 10:00 AM - 4:00 PM</p>
+                    <p class="text-muted small mb-0">Sunday: Closed</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>          <!-- FAQ Card -->
+          <div class="card border-0 shadow-hover mb-4">
+            <div class="card-header bg-light border-0">
+              <h6 class="card-title mb-0 fw-bold">
+                <i class="bi bi-question-circle-fill me-2 text-primary"></i>Quick FAQ
+              </h6>
+            </div>
+            <div class="card-body p-3">
+              <div class="accordion accordion-flush" id="faqAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                      How long does shipping take?
+                    </button>
+                  </h2>
+                  <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body small">
+                      We typically ship within 2-3 business days and delivery takes 3-7 days depending on your location.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                      What's your return policy?
+                    </button>
+                  </h2>
+                  <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body small">
+                      We offer 30-day returns on all products. Items must be in original condition.
+                    </div>
+                  </div>
+                </div>              </div>
+            </div>
+          </div>
+
+          <!-- Social Media Card -->
+          <div class="card border-0 shadow-hover">
+            <div class="card-header bg-light border-0">
+              <h6 class="card-title mb-0 fw-bold">
+                <i class="bi bi-share-fill me-2 text-primary"></i>Follow Us
+              </h6>
+            </div>
+            <div class="card-body p-4">
+              <p class="text-muted small mb-3">Stay connected with us on social media</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="#" class="btn btn-outline-primary social-btn">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="btn btn-outline-info social-btn">
+                  <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="btn btn-outline-danger social-btn">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" class="btn btn-outline-primary social-btn">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="btn btn-outline-success social-btn">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+                <a href="#" class="btn btn-outline-danger social-btn">
+                  <i class="bi bi-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>&copy; 2025 EcoCart. All Rights Reserved.</p>
-  </footer>
+  <!-- Footer Placeholder - Auto-loaded by footer.js -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Load Navbar and Footer Components -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="js/main.js" type="module"></script>
+  <script src="js/contact.js"></script>
+  
+  <!-- Initialize Bootstrap Tooltips -->
+  <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  </script>
 </body>
 </html>

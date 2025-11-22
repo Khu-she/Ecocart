@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoCart | Template Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Placeholder - Will be filled by navbar.js -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Your Page Content Goes Here -->
+  <div class="container mt-5 pt-5">
+    <div class="py-5">
+      <h1 class="text-center mb-4">Template Page</h1>
+      <p class="text-center text-muted">This is a template showing how to use reusable navbar and footer components.</p>
+      
+      <div class="alert alert-info mt-4">
+        <h5><i class="bi bi-info-circle me-2"></i>How to Use:</h5>
+        <ol class="mb-0">
+          <li>Keep the <code>&lt;div id="navbar-placeholder"&gt;&lt;/div&gt;</code> at the top of your page</li>
+          <li>Keep the <code>&lt;div id="footer-placeholder"&gt;&lt;/div&gt;</code> before the closing body tag</li>
+          <li>Include the navbar.js and footer.js scripts at the bottom</li>
+          <li>The components will automatically load and detect the active page!</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Placeholder - Will be filled by footer.js -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Load Navbar and Footer Components -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  
+  <!-- Your page-specific scripts -->
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
